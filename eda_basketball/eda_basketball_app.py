@@ -58,8 +58,8 @@ st.markdown(file_download(df_selected_team), unsafe_allow_html=True)
 if st.button('Intercorrelation Heatmap'):
     st.header('Intercorrelation Matrix Heatmap')
     df_heatmap = df_selected_team.drop(columns=['Player', 'Team', 'Pos', 'Awards'])
-    df_heatmap.to_csv('output.csv', index=False)
-    df = pd.read_csv('output.csv')
+    df_heatmap.to_csv('eda_basketball/output.csv', index=False)
+    df = pd.read_csv('eda_basketball/output.csv')
 
     corr = df.corr()
     mask = np.zeros_like(corr)
@@ -72,8 +72,8 @@ if st.button('Intercorrelation Heatmap'):
 # bar chart
 if st.button('Barchart for triples'):
     st.header('Barchart teams and triples')
-    df_selected_team.to_csv('output.csv', index=False)
-    df = pd.read_csv('output.csv')
+    df_selected_team.to_csv('eda_basketball/output.csv', index=False)
+    df = pd.read_csv('eda_basketball/output.csv')
 
     with sns.axes_style("white"):
         f, ax = plt.subplots(figsize=(15, 5))
